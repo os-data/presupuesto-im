@@ -1,0 +1,865 @@
+{
+  "@context": "http://schemas.frictionlessdata.io/fiscal-data-package.jsonld",
+  "author": "MartÃ­n Steglich",
+  "bytes": 11195908,
+  "cityCode": "Montevideo",
+  "count_of_rows": 66820,
+  "countryCode": "UY",
+  "description": "Presupuesto IM",
+  "fiscalPeriod": {
+    "end": "2015-12-31",
+    "start": "2013-01-01"
+  },
+  "hash": "78e10d0de34ecab6e332cb5f5e44c262",
+  "model": {
+    "dimensions": {
+      "administrative-classification": {
+        "attributes": {
+          "departamento": {
+            "labelfor": "id_departamento",
+            "source": "departamento",
+            "title": "departamento"
+          },
+          "id_departamento": {
+            "source": "id_departamento",
+            "title": "id_departamento"
+          },
+          "id_programa": {
+            "parent": "id_departamento",
+            "source": "id_programa",
+            "title": "id_programa"
+          },
+          "id_subprograma": {
+            "parent": "id_programa",
+            "source": "id_subprograma",
+            "title": "id_subprograma"
+          },
+          "programa": {
+            "labelfor": "id_programa",
+            "source": "programa",
+            "title": "programa"
+          },
+          "subprograma": {
+            "labelfor": "id_subprograma",
+            "source": "subprograma",
+            "title": "subprograma"
+          }
+        },
+        "classificationType": "administrative",
+        "dimensionType": "classification",
+        "primaryKey": [
+          "id_departamento",
+          "id_programa",
+          "id_subprograma"
+        ]
+      },
+      "date": {
+        "attributes": {
+          "anio": {
+            "source": "anio",
+            "title": "anio"
+          }
+        },
+        "dimensionType": "datetime",
+        "primaryKey": [
+          "anio"
+        ]
+      },
+      "economic-classification": {
+        "attributes": {
+          "id_renglon": {
+            "parent": "id_subrubro",
+            "source": "id_renglon",
+            "title": "id_renglon"
+          },
+          "id_rubro": {
+            "source": "id_rubro",
+            "title": "id_rubro"
+          },
+          "id_subrubro": {
+            "parent": "id_rubro",
+            "source": "id_subrubro",
+            "title": "id_subrubro"
+          },
+          "renglon": {
+            "labelfor": "id_renglon",
+            "source": "renglon",
+            "title": "renglon"
+          },
+          "rubro": {
+            "labelfor": "id_rubro",
+            "source": "rubro",
+            "title": "rubro"
+          },
+          "subrubro": {
+            "labelfor": "id_subrubro",
+            "source": "subrubro",
+            "title": "subrubro"
+          }
+        },
+        "classificationType": "economic",
+        "dimensionType": "classification",
+        "primaryKey": [
+          "id_rubro",
+          "id_subrubro",
+          "id_renglon"
+        ]
+      }
+    },
+    "measures": {
+      "monto_autorizado_actualizado": {
+        "source": "monto_autorizado_actualizado",
+        "title": "monto_autorizado_actualizado"
+      },
+      "monto_autorizado_presupuesto": {
+        "source": "monto_autorizado_presupuesto",
+        "title": "monto_autorizado_presupuesto"
+      },
+      "monto_ejectuado": {
+        "source": "monto_ejectuado",
+        "title": "monto_ejectuado"
+      }
+    }
+  },
+  "name": "20180822-presupuesto-im",
+  "owner": "e24cac307d3d463c257df6a053582c86",
+  "profile": "data-package",
+  "profiles": {
+    "fiscal": "*",
+    "tabular": "*"
+  },
+  "promise": {},
+  "regionCode": "sa",
+  "resources": [
+    {
+      "bytes": 8396595,
+      "count_of_rows": 40089,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpw3f3us4s/final/data/func_e_inv.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "7949fe0daaa795f33c734958e4146d7b",
+      "mediatype": "text/csv",
+      "name": "func_e_inv",
+      "path": "data/func_e_inv.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "columnType": "date:fiscal-year",
+            "conceptType": "date",
+            "format": "default",
+            "name": "anio",
+            "slug": "anio",
+            "title": "anio",
+            "type": "integer"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "departamento",
+            "slug": "departamento",
+            "title": "departamento",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "id_departamento",
+            "slug": "id_departamento",
+            "title": "id_departamento",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "programa",
+            "slug": "programa",
+            "title": "programa",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "id_programa",
+            "slug": "id_programa",
+            "title": "id_programa",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level3:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "subprograma",
+            "slug": "subprograma",
+            "title": "subprograma",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level3:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "id_subprograma",
+            "slug": "id_subprograma",
+            "title": "id_subprograma",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level1:label",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "rubro",
+            "slug": "rubro",
+            "title": "rubro",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level1:code",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "id_rubro",
+            "slug": "id_rubro",
+            "title": "id_rubro",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level2:label",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "subrubro",
+            "slug": "subrubro",
+            "title": "subrubro",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level2:code",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "id_subrubro",
+            "slug": "id_subrubro",
+            "title": "id_subrubro",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level3:label",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "renglon",
+            "slug": "renglon",
+            "title": "renglon",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level3:code",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "id_renglon",
+            "slug": "id_renglon",
+            "title": "id_renglon",
+            "type": "string"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "monto_autorizado_actualizado",
+            "slug": "monto_autorizado_actualizado",
+            "title": "monto_autorizado_actualizado",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "monto_autorizado_presupuesto",
+            "slug": "monto_autorizado_presupuesto",
+            "title": "monto_autorizado_presupuesto",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "monto_ejectuado",
+            "slug": "monto_ejectuado",
+            "title": "monto_ejectuado",
+            "type": "number"
+          }
+        ],
+        "primaryKey": [
+          "anio",
+          "id_departamento",
+          "id_programa",
+          "id_subprograma",
+          "id_rubro",
+          "id_subrubro",
+          "id_renglon"
+        ]
+      }
+    },
+    {
+      "bytes": 3743239,
+      "count_of_rows": 17881,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpw3f3us4s/final/data/func_e_inv__2013.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "bb200371feb8e1a39867f7dee7018784",
+      "mediatype": "text/csv",
+      "name": "func_e_inv__2013",
+      "path": "data/func_e_inv__2013.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "columnType": "date:fiscal-year",
+            "conceptType": "date",
+            "format": "default",
+            "name": "anio",
+            "slug": "anio",
+            "title": "anio",
+            "type": "integer"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "departamento",
+            "slug": "departamento",
+            "title": "departamento",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "id_departamento",
+            "slug": "id_departamento",
+            "title": "id_departamento",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "programa",
+            "slug": "programa",
+            "title": "programa",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "id_programa",
+            "slug": "id_programa",
+            "title": "id_programa",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level3:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "subprograma",
+            "slug": "subprograma",
+            "title": "subprograma",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level3:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "id_subprograma",
+            "slug": "id_subprograma",
+            "title": "id_subprograma",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level1:label",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "rubro",
+            "slug": "rubro",
+            "title": "rubro",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level1:code",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "id_rubro",
+            "slug": "id_rubro",
+            "title": "id_rubro",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level2:label",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "subrubro",
+            "slug": "subrubro",
+            "title": "subrubro",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level2:code",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "id_subrubro",
+            "slug": "id_subrubro",
+            "title": "id_subrubro",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level3:label",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "renglon",
+            "slug": "renglon",
+            "title": "renglon",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level3:code",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "id_renglon",
+            "slug": "id_renglon",
+            "title": "id_renglon",
+            "type": "string"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "monto_autorizado_actualizado",
+            "slug": "monto_autorizado_actualizado",
+            "title": "monto_autorizado_actualizado",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "monto_autorizado_presupuesto",
+            "slug": "monto_autorizado_presupuesto",
+            "title": "monto_autorizado_presupuesto",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "monto_ejectuado",
+            "slug": "monto_ejectuado",
+            "title": "monto_ejectuado",
+            "type": "number"
+          }
+        ],
+        "primaryKey": [
+          "anio",
+          "id_departamento",
+          "id_programa",
+          "id_subprograma",
+          "id_rubro",
+          "id_subrubro",
+          "id_renglon"
+        ]
+      }
+    },
+    {
+      "bytes": 3726194,
+      "count_of_rows": 17794,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpw3f3us4s/final/data/func_e_inv__2014.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "0d25665996d53fc512ab342bf6e0cc52",
+      "mediatype": "text/csv",
+      "name": "func_e_inv__2014",
+      "path": "data/func_e_inv__2014.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "columnType": "date:fiscal-year",
+            "conceptType": "date",
+            "format": "default",
+            "name": "anio",
+            "slug": "anio",
+            "title": "anio",
+            "type": "integer"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "departamento",
+            "slug": "departamento",
+            "title": "departamento",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "id_departamento",
+            "slug": "id_departamento",
+            "title": "id_departamento",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "programa",
+            "slug": "programa",
+            "title": "programa",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "id_programa",
+            "slug": "id_programa",
+            "title": "id_programa",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level3:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "subprograma",
+            "slug": "subprograma",
+            "title": "subprograma",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level3:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "id_subprograma",
+            "slug": "id_subprograma",
+            "title": "id_subprograma",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level1:label",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "rubro",
+            "slug": "rubro",
+            "title": "rubro",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level1:code",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "id_rubro",
+            "slug": "id_rubro",
+            "title": "id_rubro",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level2:label",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "subrubro",
+            "slug": "subrubro",
+            "title": "subrubro",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level2:code",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "id_subrubro",
+            "slug": "id_subrubro",
+            "title": "id_subrubro",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level3:label",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "renglon",
+            "slug": "renglon",
+            "title": "renglon",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level3:code",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "id_renglon",
+            "slug": "id_renglon",
+            "title": "id_renglon",
+            "type": "string"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "monto_autorizado_actualizado",
+            "slug": "monto_autorizado_actualizado",
+            "title": "monto_autorizado_actualizado",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "monto_autorizado_presupuesto",
+            "slug": "monto_autorizado_presupuesto",
+            "title": "monto_autorizado_presupuesto",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "monto_ejectuado",
+            "slug": "monto_ejectuado",
+            "title": "monto_ejectuado",
+            "type": "number"
+          }
+        ],
+        "primaryKey": [
+          "anio",
+          "id_departamento",
+          "id_programa",
+          "id_subprograma",
+          "id_rubro",
+          "id_subrubro",
+          "id_renglon"
+        ]
+      }
+    },
+    {
+      "bytes": 3726451,
+      "count_of_rows": 17777,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpw3f3us4s/final/data/func_e_inv__2015.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "7832b3b598de7947b02a7e09a671ee03",
+      "mediatype": "text/csv",
+      "name": "func_e_inv__2015",
+      "path": "data/func_e_inv__2015.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "columnType": "date:fiscal-year",
+            "conceptType": "date",
+            "format": "default",
+            "name": "anio",
+            "slug": "anio",
+            "title": "anio",
+            "type": "integer"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "departamento",
+            "slug": "departamento",
+            "title": "departamento",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "id_departamento",
+            "slug": "id_departamento",
+            "title": "id_departamento",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "programa",
+            "slug": "programa",
+            "title": "programa",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "id_programa",
+            "slug": "id_programa",
+            "title": "id_programa",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level3:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "subprograma",
+            "slug": "subprograma",
+            "title": "subprograma",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level3:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "id_subprograma",
+            "slug": "id_subprograma",
+            "title": "id_subprograma",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level1:label",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "rubro",
+            "slug": "rubro",
+            "title": "rubro",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level1:code",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "id_rubro",
+            "slug": "id_rubro",
+            "title": "id_rubro",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level2:label",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "subrubro",
+            "slug": "subrubro",
+            "title": "subrubro",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level2:code",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "id_subrubro",
+            "slug": "id_subrubro",
+            "title": "id_subrubro",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level3:label",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "renglon",
+            "slug": "renglon",
+            "title": "renglon",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:generic:level3:code",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "id_renglon",
+            "slug": "id_renglon",
+            "title": "id_renglon",
+            "type": "string"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "monto_autorizado_actualizado",
+            "slug": "monto_autorizado_actualizado",
+            "title": "monto_autorizado_actualizado",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "monto_autorizado_presupuesto",
+            "slug": "monto_autorizado_presupuesto",
+            "title": "monto_autorizado_presupuesto",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "monto_ejectuado",
+            "slug": "monto_ejectuado",
+            "title": "monto_ejectuado",
+            "type": "number"
+          }
+        ],
+        "primaryKey": [
+          "anio",
+          "id_departamento",
+          "id_programa",
+          "id_subprograma",
+          "id_rubro",
+          "id_subrubro",
+          "id_renglon"
+        ]
+      }
+    }
+  ],
+  "revision": 0,
+  "title": "Presupuesto IM"
+}
