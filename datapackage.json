@@ -147,7 +147,7 @@
       "hash": "7949fe0daaa795f33c734958e4146d7b",
       "mediatype": "text/csv",
       "name": "func_e_inv",
-      "path": "https://storage.openspending.org/func_e_inv.csv",
+      "path": "https://storage.openspending.org/presupuesto-im/func_e_inv.csv",
       "profile": "data-resource",
       "schema": {
         "fields": [
@@ -329,7 +329,7 @@
       "hash": "bb200371feb8e1a39867f7dee7018784",
       "mediatype": "text/csv",
       "name": "func_e_inv__2013",
-      "path": "https://storage.openspending.org/func_e_inv__2013.csv",
+      "path": "https://storage.openspending.org/presupuesto-im/func_e_inv__2013.csv",
       "profile": "data-resource",
       "schema": {
         "fields": [
@@ -511,7 +511,7 @@
       "hash": "0d25665996d53fc512ab342bf6e0cc52",
       "mediatype": "text/csv",
       "name": "func_e_inv__2014",
-      "path": "https://storage.openspending.org/func_e_inv__2014.csv",
+      "path": "https://storage.openspending.org/presupuesto-im/func_e_inv__2014.csv",
       "profile": "data-resource",
       "schema": {
         "fields": [
@@ -693,7 +693,7 @@
       "hash": "7832b3b598de7947b02a7e09a671ee03",
       "mediatype": "text/csv",
       "name": "func_e_inv__2015",
-      "path": "https://storage.openspending.org/func_e_inv__2015.csv",
+      "path": "https://storage.openspending.org/presupuesto-im/func_e_inv__2015.csv",
       "profile": "data-resource",
       "schema": {
         "fields": [
